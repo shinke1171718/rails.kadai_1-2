@@ -1,0 +1,42 @@
+<h1>Ruby on Rails スケジュール管理アプリ</h1>
+
+<h3>スケジュール一覧</h3>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>スケジュール更新日時</th>
+      <th>確認</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <th><%= post.id %></th>
+        <th><%= post.title %></th>
+        <th><%= post.start %></th>
+        <th><%= post.end %></th>
+        <th><%= post.all %></th>
+        <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "スケジュール新規登録", :new_post %></p>
+
+
