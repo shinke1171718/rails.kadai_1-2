@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_21_091334) do
+ActiveRecord::Schema.define(version: 2022_10_22_130827) do
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_10_21_091334) do
     t.string "title"
     t.date "start"
     t.date "end"
-    t.boolean "all"
+    t.boolean "all_day"
     t.string "introduction"
   end
 
