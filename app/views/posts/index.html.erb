@@ -23,35 +23,19 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <th><%= post.id %></th>
-        <th><%= post.title %></th>
-        <th><%= post.start %></th>
-        <th><%= post.end %></th>
-        <th><%= post.all ? '○' : '' %></th>
+        <td><%= post.id %></td>
+        <td><%= post.title %></td>
+        <td><%= post.start %></td>
+        <td><%= post.end %></td>
+        <td><%= post.all ? '○' : '' %></td>
         <td><%= post.updated_at.to_s(:datetime_jp) %></td>
-        <th><%= link_to "確認", post %></th>
-        <th></th>
-        <th></th>
+        <td><%= link_to "確認", post %></td>
+        <td><%= link_to "編集", [:edit, post]  %></td>
+        <td><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <p><%= link_to "スケジュール新規登録", :new_post %></p>
-
-<h1>
-  <script>
-    var today=new Date(); 
-
-    var year = today.getFullYear();
-    var month = today.getMonth()+1;
-    var week = today.getDay();
-    var day = today.getDate();
-
-    var week_ja= new Array("日","月","火","水","木","金","土");
-
-    document.write("現在の日時:"+year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
-  </script>
-</h1>
-
 

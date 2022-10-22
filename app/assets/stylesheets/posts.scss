@@ -3,16 +3,40 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 table th {
-  background-color: #df005d;
+  background-color: #f365a0;
   padding: 10px 20px;
 }
 
 table td {
-  background-color: #f9ecd5;
+  background-color: #f1cccc;
   padding: 10px 20px;
 }
 
 .notice {
   background-color: #ccf;
   padding: 5px;
+}
+
+h1 {
+  background-color: #df005d;
+  width: 100%;
+  margin:0px;
+  padding: 30px;
+  background-size: 100% 100%;
+}
+
+
+h3 {
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+footer {
+  background-color: #df005d;
+  width: 100%;
+  margin:0px;
+  padding: 30px;
+  font-size: 40px;
+  font-weight: 700;
+  background-size: 100% 100%;
 }
