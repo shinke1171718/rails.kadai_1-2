@@ -27,15 +27,9 @@
         <th><%= post.title %></th>
         <th><%= post.start %></th>
         <th><%= post.end %></th>
-        <th>
-          <% if post.all == true %>
-            ○
-          <% else post.all == false %>
-
-          <% end %>
-        </th>
+        <th><%= post.all ? '○' : '' %></th>
         <td><%= post.updated_at.to_s(:datetime_jp) %></td>
-        <th></th>
+        <th><%= link_to "確認", post %></th>
         <th></th>
         <th></th>
       </tr>
@@ -46,20 +40,18 @@
 <p><%= link_to "スケジュール新規登録", :new_post %></p>
 
 <h1>
-<script>
-  var today=new Date(); 
+  <script>
+    var today=new Date(); 
 
-  //年・月・日・曜日を取得
-  var year = today.getFullYear();
-  var month = today.getMonth()+1;
-  var week = today.getDay();
-  var day = today.getDate();
+    var year = today.getFullYear();
+    var month = today.getMonth()+1;
+    var week = today.getDay();
+    var day = today.getDate();
 
-  var week_ja= new Array("日","月","火","水","木","金","土");
+    var week_ja= new Array("日","月","火","水","木","金","土");
 
-  //年・月・日・曜日を書き出す
-  document.write("現在の日時:"+year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
-</script>
+    document.write("現在の日時:"+year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
+  </script>
 </h1>
 
 
