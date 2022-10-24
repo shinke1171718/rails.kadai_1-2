@@ -16,17 +16,19 @@
     <%= yield %>
   </body>
   <footer>
-    <script>
-      var today=new Date();
+    <p>現在の日時 : <span id="text"></span>　　スケジュール合計 : <%= Post.count %></p>
 
-      var year = today.getFullYear();
-      var month = today.getMonth()+1;
-      var week = today.getDay();
-      var day = today.getDate();
+    <script type="text/javascript">
+    document.getElementById("text").innerHTML = today();
+      function today() {
+        var date = new Date();
+        var year_str = date.getFullYear();
+        var month_str = date.getMonth()+1;
+        var day_str = date.getDate();
 
-      var week_ja= new Array("日","月","火","水","木","金","土");
-
-      document.write("現在の日時:"+year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
+        var day =  year_str + "年" + month_str + "月" + day_str + "日"
+        return day;
+      }
     </script>
   </footer>
 </html>
